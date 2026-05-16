@@ -108,7 +108,7 @@ export default async function ProductReviewPage({ params }: Props) {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Top Features</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {product.features.map((feature, i) => (
+              {product.features.map((feature: string, i: number) => (
                 <div key={i} className="flex items-start p-4 rounded-2xl bg-muted/30 border">
                   <div className="h-6 w-6 rounded-full bg-green-500/10 flex items-center justify-center mr-3 shrink-0">
                     <Check className="h-4 w-4 text-green-600" />
@@ -134,7 +134,7 @@ export default async function ProductReviewPage({ params }: Props) {
                 <Check className="h-5 w-5 mr-2" /> Pros
               </h3>
               <ul className="space-y-4">
-                {product.pros.map((pro, i) => (
+                {product.pros.map((pro: string, i: number) => (
                   <li key={i} className="flex items-start text-sm font-medium">
                     <span className="h-1.5 w-1.5 rounded-full bg-green-500 mt-1.5 mr-3 shrink-0" />
                     {pro}
@@ -147,7 +147,7 @@ export default async function ProductReviewPage({ params }: Props) {
                 <X className="h-5 w-5 mr-2" /> Cons
               </h3>
               <ul className="space-y-4">
-                {product.cons.map((con, i) => (
+                {product.cons.map((con: string, i: number) => (
                   <li key={i} className="flex items-start text-sm font-medium">
                     <span className="h-1.5 w-1.5 rounded-full bg-red-500 mt-1.5 mr-3 shrink-0" />
                     {con}
@@ -163,7 +163,7 @@ export default async function ProductReviewPage({ params }: Props) {
               <HelpCircle className="h-6 w-6 mr-2 text-[#FF9900]" /> Frequently Asked Questions
             </h2>
             <div className="space-y-4">
-              {product.faq.map((item, i) => (
+              {product.faq.map((item: { question: string; answer: string }, i: number) => (
                 <div key={i} className="p-6 rounded-2xl border bg-card">
                   <h4 className="font-bold mb-2">{item.question}</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
@@ -203,7 +203,7 @@ export default async function ProductReviewPage({ params }: Props) {
             <div className="rounded-3xl border bg-muted/20 p-8">
               <h4 className="font-bold mb-4">Related Tags</h4>
               <div className="flex flex-wrap gap-2">
-                {product.tags.map((tag) => (
+                {product.tags.map((tag: string) => (
                   <span key={tag} className="px-3 py-1 rounded-full bg-background border text-xs font-medium text-muted-foreground hover:text-[#FF9900] transition-colors cursor-pointer">
                     #{tag}
                   </span>

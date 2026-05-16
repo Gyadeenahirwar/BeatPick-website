@@ -11,10 +11,11 @@ import Image from "next/image";
 
 import { getProducts, getBlogPosts } from "@/sanity/lib/service";
 import { projectId } from "@/sanity/env";
+import type { Product, BlogPost } from "@/types";
 
 export default async function Home() {
-  let featured = [];
-  let latestBlogs = [];
+  let featured: Product[] = [];
+  let latestBlogs: BlogPost[] = [];
 
   if (projectId && projectId !== 'placeholder') {
     try {

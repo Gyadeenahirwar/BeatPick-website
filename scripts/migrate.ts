@@ -23,7 +23,7 @@ async function migrate() {
       slug: { _type: 'slug', current: cat.slug },
       description: cat.description,
     };
-    const created = await client.createOrReplace(doc);
+    const created = await client.create(doc);
     categoryMap[cat.slug] = created._id;
     console.log(`Migrated category: ${cat.name}`);
   }
@@ -53,7 +53,7 @@ async function migrate() {
       faq: p.faq,
       tags: p.tags,
     };
-    await client.createOrReplace(doc);
+    await client.create(doc);
     console.log(`Migrated product: ${p.title}`);
   }
 
@@ -69,7 +69,7 @@ async function migrate() {
       readTime: b.readTime,
       publishedAt: new Date(b.publishedAt).toISOString(),
     };
-    await client.createOrReplace(doc);
+    await client.create(doc);
     console.log(`Migrated blog post: ${b.title}`);
   }
 

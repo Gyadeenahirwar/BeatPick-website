@@ -3,12 +3,13 @@ import ProductCard from "@/components/product/ProductCard";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import type { Product } from "@/types";
 
 import { getProducts } from "@/sanity/lib/service";
 import { projectId } from "@/sanity/env";
 
 const TrendingProducts = async () => {
-  let trending = [];
+  let trending: Product[] = [];
   
   if (projectId && projectId !== 'placeholder') {
     try {
