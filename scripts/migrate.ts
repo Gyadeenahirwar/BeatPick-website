@@ -22,7 +22,6 @@ async function migrate() {
       name: cat.name,
       slug: { _type: 'slug', current: cat.slug },
       description: cat.description,
-      icon: cat.icon,
     };
     const created = await client.createOrReplace(doc);
     categoryMap[cat.slug] = created._id;
