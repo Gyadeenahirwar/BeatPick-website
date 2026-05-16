@@ -1,5 +1,16 @@
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { getCategories } from "@/sanity/lib/service";
 import { projectId } from "@/sanity/env";
+
+const categories = [
+  { id: "1", name: "Electronics", slug: "electronics", description: "Latest gadgets and tech reviews", image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&q=80" },
+  { id: "2", name: "Home & Garden", slug: "home-garden", description: "Everything for your home", image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" },
+  { id: "3", name: "Fashion", slug: "fashion", description: "Style guides and fashion picks", image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80" },
+  { id: "4", name: "Sports", slug: "sports", description: "Gear and equipment reviews", image: "https://images.unsplash.com/photo-1461896836934- voices08-4140-92da-ecbfa4c6e7ee?w=800&q=80" },
+  { id: "5", name: "Beauty", slug: "beauty", description: "Skincare and beauty products", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80" },
+];
 
 const Categories = async () => {
   let displayCategories = [];
