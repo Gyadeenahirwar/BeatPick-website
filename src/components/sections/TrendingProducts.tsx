@@ -7,8 +7,10 @@ import Link from "next/link";
 import { getProducts } from "@/sanity/lib/service";
 import { projectId } from "@/sanity/env";
 
+import { Product } from "@/types";
+
 const TrendingProducts = async () => {
-  let trending = [];
+  let trending: Product[] = [];
   
   if (projectId && projectId !== 'placeholder') {
     try {

@@ -1,5 +1,9 @@
+import { categories } from "@/data/categories";
 import { getCategories } from "@/sanity/lib/service";
 import { projectId } from "@/sanity/env";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const Categories = async () => {
   let displayCategories = [];
